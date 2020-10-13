@@ -1,5 +1,5 @@
 TARGET = all.out
-
+BUILD = build
 INC = -Iinc
 $(TARGET): main.o myutils.o mystring.o bitmask.o
 	gcc main.o myutils.o mystring.o bitmask.o -Iinc -o all.out
@@ -17,7 +17,11 @@ mystring.o: src/mystring.c inc/mystring.h
 bitmask.o: src/bitmask.c inc/bitmask.h
 	gcc -c $(INC) src/bitmask.c
 
+all: src/myutils.c rc/mystring.c src/bitmask.c  $(BUILD)
+	gcc src/myutils.c rc/mystring.c src/bitmask.c $(INC) -o all.out
 run: all.out
 	./all.out
 clean:
 	rm *.o *.out
+$(BUILD):
+	mkdir build
