@@ -1,0 +1,17 @@
+
+$(TARGET): main.o myutils.o mystring.o bitmask.o
+	gcc main.c myutils.c mystring.c bitmask.c -Iinc -o all.out
+
+
+main.o: main.c mystring.h myutils.h bitmask.h
+	gcc -c -Iinc main.c 
+
+myutils.o: myutils.c myutils.h 
+	gcc -c -Iinc myutils.c
+
+mystring.o: mystring.c mystring.h
+	gcc -c -Iinc mystring.c
+
+bitmask.o: bitmask.c bitmask.h
+	gcc -c -Iinc bitmask.c
+
