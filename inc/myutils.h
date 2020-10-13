@@ -1,6 +1,7 @@
 #ifndef MYUTILS_H_INCLUDED
 #define MYUTILS_H_INCLUDED
 #include<stdio.h>
+#include <stdarg.h>
 int factorial(int num);
 int isPrime(int num);
 int isPalindrome(int num);
