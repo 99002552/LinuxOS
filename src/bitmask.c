@@ -16,11 +16,11 @@ uint8_t flipbit(uint8_t num,int bit_position)
     num^=(1<<bit_position);
     return num;
 }
-bool querybit(uint8_t num,int bit_position)
+int querybit(uint8_t num,int bit_position)
 {
     //If bit is set then return true or else return false
     if(num&(1<<bit_position))
-        return true;
+        return 1;
     else
-        return false;
+        return 0;
 }

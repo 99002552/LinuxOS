@@ -2,12 +2,12 @@
 
 int mystrlen(char str[])
 {
-    int count=0;index=0;
+    int count=0,index=0;
     while(str[index]!='\0')
         count++;
     return count;
 }
-char mystrcpy(char dest[],char source[])
+char* mystrcpy(char dest[],char source[])
 {
     int index=0;
     while(source[index]!='\0')
@@ -22,7 +22,7 @@ char mystrcpy(char dest[],char source[])
 char* my_strcat(char* destination, const char* source)
 {
 	// make ptr point to the end of destination string
-	char* ptr = destination + strlen(destination);
+	char* ptr = destination + mystrlen(destination);
 
 	// Appends characters of source to the destination string
 	while (*source != '\0')
@@ -34,13 +34,13 @@ char* my_strcat(char* destination, const char* source)
 	// destination is returned by standard strcat()
 	return destination;
 }
-bool mystrcmp(char str1[],char str2[])
+int mystrcmp(char str1[],char str2[])
 {
     int index=0;
     while(str1[index]!='\0')
     {
         if(str1[index]!=str2[index])
-            return false;
+            return 0;
     }
-    return true;
+    return 1;
 }

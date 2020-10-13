@@ -47,6 +47,7 @@ int isPalindrome(int num)
 int vsum(int num,...)
 {
     int sum=0;
+    va_list valist;
     va_start(valist, num);
 
     for (int i=0;i<num;i++)
