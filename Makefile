@@ -17,8 +17,8 @@ mystring.o: src/mystring.c inc/mystring.h
 bitmask.o: src/bitmask.c inc/bitmask.h
 	gcc -c $(INC) src/bitmask.c
 
-all: src/myutils.c src/mystring.c src/bitmask.c  $(BUILD)
-	gcc src/myutils.c src/mystring.c src/bitmask.c $(INC) -o all.out
+all: main.c src/myutils.c src/mystring.c src/bitmask.c  $(BUILD)
+	gcc main.c src/myutils.c src/mystring.c src/bitmask.c $(INC) -o all.out
 run: all.out
 	./all.out
 clean:
